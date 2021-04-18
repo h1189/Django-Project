@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>List of Uploaded Files</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>File Upload Date</th>
+            <th>UserName</th>
+            <th>File Details</th>
+            <th>Download</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <tr>
+            <td>{{file.date_of_file_upload}}</td>
+            <td>{{file.username}}</td>
+            <td>{{file.file}}</td>
+            <td>
+                <a href="{{file.file.url}}" class="btn btn-primary btn-sm">
+                    Download File
+                </a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div>
+    {%for message in messages%}
+    <h3> {{message}} </h3>
+    {%endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Total Number of File Uploads are :</h2>
+<div>
+    {%for message in messages%}
+    <h3> {{message}} </h3>
+    {%endfor%}
+</div>
+{% endblock %}
